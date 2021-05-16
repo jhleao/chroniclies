@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href='/styles.css' />
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <title>historinhas!</title>
+</head>
+<body>
+  <header class='titulo'>
+    <h1>historinhas!</h1>
+    <h3>n° <span th:text="${story.getFormattedId()}">431</span></h3>
+  </header>
+  <main class='historinha'>
+    <article th:text="${story.content}">
+    </article>
+  </main>
+  <footer class='links'>
+    <a href='./'>mais historinha</a>
+    <a href='./enviar'>envie sua historinha</a>
+  </footer>
+</body>
+</html>

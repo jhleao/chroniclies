@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href='/styles.css' />
+  <title>historinhas pendentes</title>
+</head>
+<body>
+  <header class='titulo'>
+    <h1 th:if="${stories.size()} > 0">historinhas pendentes</h1>
+    <h1 th:if="${stories.size()} < 1">não tem historinhas pendentes :)</h1>
+  </header>
+  <div style="text-align: left;" class='historinha' th:each="story : ${stories}">
+    <h3>historinha pendente #<span th:text="${storyStat.index}"></span></h3>
+    <article th:text="${story.content}"></article>
+    <div class='avaliacao'>
+      <form method="post" action="#" th:action="@{'/admin/recusar/'+ ${story.id}}">
+        <button type="submit" class='botao'>recusar</button>
+      </form>
+      <form method="post" action="#" th:action="@{'/admin/aceitar/'+ ${story.id}}">
+        <button type="submit" class='botao'>aceitar</button>
+      </form>
+    </div>
+  </div>
+  <form style="text-align: center;" method="post" action="#" th:action="@{/admin/logout}">
+    <button type="submit" class='a'>sair</button>
+  </form>
+</body>
+</html>
