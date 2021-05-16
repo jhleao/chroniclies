@@ -1,0 +1,15 @@
+leao/historinhas/controllers/LoginController.class
+leao/historinhas/repositories/ModeratorRepository.class
+leao/historinhas/repositories/StoryRepository.class
+leao/historinhas/repositories/IpStoryBlockRepository.class
+leao/historinhas/security/SecurityConfig.class
+leao/historinhas/HistorinhasApplication.class
+leao/historinhas/models/IpStoryBlock.class
+leao/historinhas/services/MyUserDetailsService.class
+leao/historinhas/models/StoryStatus.class
+leao/historinhas/models/Moderator.class
+leao/historinhas/bootstrap/BootStrapData.class
+leao/historinhas/models/Story.class
+leao/historinhas/controllers/StoryController.class
+leao/historinhas/requests/NewStoryRequest.class
+leao/historinhas/models/UserRole.class

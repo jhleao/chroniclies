@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href='/styles.css' />
+  <title>enviar historinha</title>
+</head>
+<body>
+  <header class='titulo'> 
+    <h1>envie sua historinha</h1>
+  </header>
+  <main>
+    <form class='formulario' method='post' action='#' th:action='@{/enviar}' th:object='${newStory}'>
+      <label for='email'>email (opcional)
+        <input type='email' limit='40' name='email'/>
+      </label>
+      <label for='content'>historinha
+        <textarea name='content' rows='5' limit='300'></textarea> 
+      </label>
+      <button class='botao' type='submit'>enviar</button>
+    </form>
+  </main>
+  <footer class='links'>
+    <a href='/'>ver historinha dos outros</a>
+  </footer>
+</body>
+</html>

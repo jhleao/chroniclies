@@ -1,0 +1,15 @@
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/controllers/StoryController.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/repositories/IpStoryBlockRepository.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/bootstrap/BootStrapData.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/models/IpStoryBlock.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/models/Moderator.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/repositories/ModeratorRepository.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/models/UserRole.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/repositories/StoryRepository.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/HistorinhasApplication.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/requests/NewStoryRequest.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/controllers/LoginController.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/security/SecurityConfig.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/models/StoryStatus.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/models/Story.java
+/home/leao/Documents/historinhas/historinhas/src/main/java/leao/historinhas/services/MyUserDetailsService.java
