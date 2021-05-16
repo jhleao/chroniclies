@@ -100,7 +100,7 @@ public class StoryController {
   @RequestMapping("/")
   public String generateMainPage(Model model, HttpServletRequest request){
 
-    String requestIp = request.getRemoteAddr();
+    String requestIp = request.getHeader("X-Real-IP");
     System.out.println("Seu ip é... " + requestIp);
 
     Story story = getRandomStory(requestIp);
