@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel='stylesheet' type='text/css' href='/styles.css' />
+  <link rel='stylesheet' type='text/css' th:href="@{/styles.css}"  />
+  <link rel="shortcut icon" th:href="@{/favicon.ico}"  />
   <title>enviar historinha</title>
 </head>
 <body>
@@ -25,7 +26,7 @@
     </form>
   </main>
   <footer class='links'>
-    <a href='/'>ver historinha dos outros</a>
+    <a href='./'>ver historinha dos outros</a>
   </footer>
 </body>
 </html>

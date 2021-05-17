@@ -33,14 +33,25 @@ public class BootStrapData implements CommandLineRunner{
     "pego exatamente 300g de almoço no restaurante.", "jhleao99@gmail.com", 
     StoryStatus.APPROVED);
 
-    Story thirdStory = new Story("saí da empresa para atender um telefonema, " +
+    Story thirdStory = new Story("todo dia no ponto de ônibus eu fico " +
+    "contando quantos honda fit passam na minha frente e hoje não passou nenhum."
+    , "jhleao99@gmail.com", StoryStatus.APPROVED);
+
+    Story fourthStory = new Story("saí da empresa para atender um telefonema, " +
     "mas deixei a porta escorada para poder entrar depois. alguém entrou " + 
     "antes de mim e fechou a porta.", "jhleao99@gmail.com", 
+    StoryStatus.PENDING);
+
+    Story fifthStory = new Story("fui grampear um trabalho na secretaria da escola " + 
+    "e depois que eu grampeei a secretária me falou \"você grampeou tudo errado, me " +
+    "dá que eu arrumo\". ela tirou os grampos e grampeou tudo de novo.", "jhleao99@gmail.com", 
     StoryStatus.PENDING);
 
     storyRepository.save(firstStory);
     storyRepository.save(secondStory);
     storyRepository.save(thirdStory);
+    storyRepository.save(fourthStory);
+    storyRepository.save(fifthStory);
 
     Moderator firstModerator = new Moderator("jhleao", "senha");
 

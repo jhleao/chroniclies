@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -28,10 +29,13 @@ public class StoryController {
 
   private final StoryRepository storyRepository;
   private final IpStoryBlockRepository ipStoryBlockRepository;
+  private JavaMailSender javaMailSender;
 
-  public StoryController(StoryRepository storyRepository, IpStoryBlockRepository ipStoryBlockRepository){
+  public StoryController(StoryRepository storyRepository, 
+  IpStoryBlockRepository ipStoryBlockRepository, JavaMailSender javaMailSender){
     this.storyRepository = storyRepository;
     this.ipStoryBlockRepository = ipStoryBlockRepository;
+    this.javaMailSender= javaMailSender;
   }
   
   @RequestMapping("/admin")
@@ -61,7 +65,7 @@ public class StoryController {
 
     if(optionalStory.isPresent()){
       Story story = optionalStory.get();
-      story.approve();
+      story.approve(javaMailSender);
       storyRepository.save(story);
     }
 
@@ -100,6 +104,8 @@ public class StoryController {
   @RequestMapping("/")
   public String generateMainPage(Model model, HttpServletRequest request){
 
+    System.out.println("|-------- Vc entrou no historinhas --------|");
+    
     String requestIp = request.getHeader("X-Real-IP");
     System.out.println("Seu ip é... " + requestIp);
 
@@ -122,10 +128,6 @@ public class StoryController {
     System.out.println("As historinhas bloqueadas são: " + blockedStories);
 
     List<Story> approvedStories = storyRepository.findAllByStatus(StoryStatus.APPROVED);
-    List<Story> pendingStories = storyRepository.findAllByStatus(StoryStatus.PENDING);
-
-    System.out.println("Quantidade de historinhas pendentes: " + pendingStories.size());
-    System.out.println("Quantidade de historinhas aprovadas: " + approvedStories.size());
 
     List<Story> allowedStories = approvedStories.stream().filter(s -> !blockedStories.contains(s)).collect(Collectors.toList());
 
@@ -143,7 +145,10 @@ public class StoryController {
     IpStoryBlock newBlock = new IpStoryBlock(requestIp, story);
     ipStoryBlockRepository.save(newBlock);
 
-    System.out.println("E a historinha escolhida foooi: " + story.toString());
+    System.out.println("E a historinha escolhida foi: " + story.toString());
+
+    System.out.println("|------------------------------------------|");
+
     return story;
   }
 
